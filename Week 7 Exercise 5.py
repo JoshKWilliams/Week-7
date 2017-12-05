@@ -4,21 +4,30 @@ import random
 rand_answer = ['yes', 'no', 'maybe']
 # asking the user for their name
 name = input('What is your name: ')
-# defining a function to return the users name
+percent = random.randint(1, 100)
+
+
+# defining a function to get the users name
 def get_name():
     return name
 # defining a function to generate a random answer from the list given, and to return the chosen word
+
+
 def random_answer():
     random_word = random.choice(rand_answer)
     return random_word
 
+
 # prints the users name with a hello message.
-print ("Hello " + get_name())
+print("Hello " + get_name())
 # creates a while loop for the questions a user enters
 while 1:
     question = str.lower(input('Please enter your question: '))
 #    print(question.find("windows"))
-    if question == 'goodbye':
+
+    if percent <= 85:
+        quit()
+    elif question == 'goodbye':
         print("goodbye")
         break
     elif question.find("windows") > -1:
